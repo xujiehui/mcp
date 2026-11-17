@@ -1,0 +1,67 @@
+{
+  "name": "moonvy-mcp",
+  "version": "0.3.0",
+  "description": "Moonvy design context, styles, screenshots and assets over MCP",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "moonvy-mcp": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "docs",
+    ".env.example",
+    "scripts/verify-live.mjs",
+    "scripts/verify-baseline.mjs",
+    "scripts/verify-client.mjs",
+    "scripts/benchmark.mjs",
+    "baselines",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "start": "node dist/cli.js",
+    "dev": "tsx src/cli.ts",
+    "verify:live": "node scripts/verify-live.mjs",
+    "benchmark": "node scripts/benchmark.mjs",
+    "verify:baseline": "node scripts/verify-baseline.mjs",
+    "verify:client": "node scripts/verify-client.mjs",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.15.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.3",
+    "vitest": "^5.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xujiehui/mcp.git"
+  },
+  "homepage": "https://github.com/xujiehui/mcp#readme",
+  "bugs": {
+    "url": "https://github.com/xujiehui/mcp/issues"
+  },
+  "keywords": [
+    "moonvy",
+    "mcp",
+    "model-context-protocol",
+    "design",
+    "css",
+    "typescript"
+  ]
+}

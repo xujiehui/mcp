@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+.moonvy/
+node_modules/
+coverage/
+tests/
+.github/
+.git/
+*.log

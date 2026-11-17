@@ -1,0 +1,13 @@
+{
+  "genomeVer": "synthetic-style-regression-v1",
+  "styles": { "textStyles": [{ "id": "body", "data": { "fontName": { "family": "Inter", "style": "Regular" }, "fontWeight": 400 } }] },
+  "pages": [{ "id": "frame", "type": "artboard", "rect": { "x": 100, "y": 200, "w": 375, "h": 812 }, "children": [
+    { "id": "text", "type": "text", "rect": { "x": 10, "y": 20, "w": 100, "h": 40 }, "textLink": "body", "textbox": { "text": "Hello world", "segments": [
+      { "start": 0, "end": 6, "fontSize": 20, "lineHeight": { "value": 150, "unit": "per" }, "letterSpacing": { "value": 10, "unit": "per" } },
+      { "start": 6, "end": 11, "fontSize": 16, "fontWeight": 700, "underline": true, "letterSpacing": { "value": 2, "unit": "px" } }
+    ] }, "effects": [{ "type": "innerShadow", "offset": { "x": 0, "y": 2 }, "radius": 4, "spread": 0, "color": { "r": 0, "g": 0, "b": 0, "a": 0.2 } }] },
+    { "id": "fills", "type": "rectangle", "rect": { "x": 20, "y": 80, "w": 100, "h": 40 }, "fills": [
+      { "type": "color", "color": { "r": 1, "g": 0, "b": 0, "a": 0.5 } }, { "type": "color", "color": { "r": 0, "g": 0, "b": 1 } }
+    ], "strokes": [{ "w": 2, "align": "inside", "fill": { "color": { "r": 1, "g": 1, "b": 1 } } }, { "w": 1, "align": "outside", "fill": { "color": { "r": 0, "g": 0, "b": 0 } } }] }
+  ] }]
+}

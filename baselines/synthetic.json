@@ -1,0 +1,8 @@
+{
+  "formatVersion": 1,
+  "provenance": { "kind": "synthetic", "observedAt": "2026-11-17", "source": "Hand-authored CSS expectations from CSS units/shadow rules; not a real Moonvy observation." },
+  "designs": [{ "url": "https://moonvy.com/project/synthetic/folder/design", "cssUnit": "rpx", "samples": [
+    { "nodeId": "text", "css": { "width": "200rpx", "height": "80rpx", "fontFamily": "Inter", "fontSize": "40rpx", "fontWeight": "400", "lineHeight": "150%", "letterSpacing": "0.1em", "boxShadow": "0rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.2) inset" }, "values": { "typography.letterSpacing": 10, "typography.letterSpacingUnit": "%", "textRuns.0.rangeKnown": true, "textRuns.1.css.fontWeight": "700", "textRuns.1.css.letterSpacing": "4rpx", "textRuns.1.css.textDecorationLine": "underline" }, "canvasPosition": [20, 40] },
+    { "nodeId": "fills", "css": { "background": "linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5)), #0000ff", "boxShadow": "0rpx 0rpx 0rpx 4rpx #ffffff inset, 0rpx 0rpx 0rpx 2rpx #000000" } }
+  ] }]
+}
