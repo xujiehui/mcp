@@ -2,7 +2,7 @@
 
 ## 自动化验证
 
-从仓库安装依赖后运行：
+进入仓库的 `servers/moonvy/` 目录后运行：
 
 ```bash
 npm ci

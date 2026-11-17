@@ -1,30 +1,31 @@
-# 贡献 Moonvy MCP
+# 贡献 MCP 工具
 
-要求 Node.js 22.12 或更高版本。安装依赖后，提交前运行类型检查、测试和构建：
+## 工具目录
+
+每个 MCP 服务放在 `servers/<工具名>/` 下，使用简短、稳定的小写目录名，例如 `servers/moonvy/`。源码、测试、文档、依赖锁文件和配置示例随工具一起维护；源码结构按所用语言的习惯组织。
+
+各工具应能独立安装、构建和运行，依赖在各自目录管理。新工具不需要沿用 Moonvy 的技术栈。
+
+## 添加工具
+
+1. 在 `servers/` 下创建工具目录，提供 README、依赖及锁文件、源码、配置示例和测试。
+2. README 说明运行环境、安装步骤、stdio/HTTP 等连接方式、工具接口与限制；所有命令注明执行目录。
+3. 保留工具及第三方代码的许可。单独打包时应包含所需的 LICENSE 和来源说明。
+4. 在仓库首页的工具目录表中添加链接。
+5. 在 `.github/workflows/` 中添加对应工具的 CI，限定工作目录、依赖缓存路径及触发文件范围，参考 [Moonvy CI](.github/workflows/moonvy.yml)。
+
+本机凭据和运行数据不提交到仓库。配置示例只使用空值或占位符；日志、问题报告和测试输入应脱敏。
+
+## 修改已有工具
+
+进入目标工具目录，按照该工具的贡献说明执行检查。Moonvy MCP 的说明见 [servers/moonvy/CONTRIBUTING.md](servers/moonvy/CONTRIBUTING.md)：
 
 ```bash
+cd servers/moonvy
 npm ci
 npm run check
 npm test
 npm run build
 ```
 
-## 代码结构
-
-| 位置 | 职责 |
-| --- | --- |
-| `src/client.ts` | Moonvy 私有 API、压缩下载、缓存、重试与取消 |
-| `src/genome.ts`、`src/vendor/genome.js` | 图层索引、精确样式、坐标、分页和 Token |
-| `src/native-layout.ts`、`src/complex-style.ts` | 原生布局与复杂样式适配 |
-| `src/variables.ts`、`src/components.ts` | 原生变量、主题、组件语义与本机映射 |
-| `src/assets.ts`、`src/image-fills.ts`、`src/storage.ts` | 已有素材、图片填充与有界持久存储 |
-| `src/snapshots.ts` | 设计快照与增量差异 |
-| `src/server.ts`、`src/http.ts`、`src/cli.ts` | MCP 工具、资源与传输 |
-| `tests/` | 合成输入、Mock API 与官方客户端回归 |
-| `scripts/`、`baselines/` | 验收脚本、性能检查与公共样式基线 |
-
-适配私有格式时保留源字段，无法准确转换的情况应给出说明。回归测试应验证使用者能观察到的行为；可复现的格式差异优先用不含真实项目内容的最小输入覆盖。
-
-提交 Issue 时说明 Node.js、服务版本、传输方式、工具名及脱敏后的错误编号/失败阶段。请勿附带 Token、签名 URL、私人 Genome、截图或素材。真实项目调试数据放在本机 `.moonvy/`，仓库使用占位链接和合成测试数据。
-
-修改参考解析器时保留 MIT 许可和 [来源说明](THIRD_PARTY_NOTICES.md)。提交到本项目的贡献按 MIT 许可提供。
+目录或接口变化需同步更新安装路径、客户端配置、文档链接和 CI。提交到本仓库的贡献按 MIT 许可提供。

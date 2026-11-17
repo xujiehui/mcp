@@ -50,9 +50,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xujiehui/mcp.git"
+    "url": "git+https://github.com/xujiehui/mcp.git",
+    "directory": "servers/moonvy"
   },
-  "homepage": "https://github.com/xujiehui/mcp#readme",
+  "homepage": "https://github.com/xujiehui/mcp/tree/main/servers/moonvy#readme",
   "bugs": {
     "url": "https://github.com/xujiehui/mcp/issues"
   },

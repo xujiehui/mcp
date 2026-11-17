@@ -2,7 +2,16 @@ name: Moonvy MCP CI
 
 on:
   push:
+    paths:
+      - 'servers/moonvy/**'
+      - '.github/workflows/moonvy.yml'
+      - 'LICENSE'
   pull_request:
+    paths:
+      - 'servers/moonvy/**'
+      - '.github/workflows/moonvy.yml'
+      - 'LICENSE'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -10,6 +19,9 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: servers/moonvy
     strategy:
       matrix:
         node: [22, 24]
@@ -19,6 +31,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: npm
+          cache-dependency-path: servers/moonvy/package-lock.json
       - run: npm ci
       - run: npm run check
       - run: npm test
